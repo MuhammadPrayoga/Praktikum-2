@@ -28,8 +28,9 @@ CREATE TABLE mahasiswa (
 ```
 
 ## Tampilkan hasil Tabel :
-`DESC mahasiswa;`
+```DESC mahasiswa;```
 
+![](foto/1.png)
 
 ## 2. Membuat tabel dosen :
 ```
@@ -39,8 +40,9 @@ CREATE TABLE dosen (
     );
 ```
 ## Tampilkan tabel :
-`DESC dosen;`
+```DESC dosen;```
 
+![](foto/2.png)
 
 ## 3. Membuat tabel mata kuliah;
 ```
@@ -52,9 +54,9 @@ CREATE TABLE matakuliah (
 ```
 
 ## Tampilkan tabel :
-`DESC matakuliah;`
+```DESC matakuliah;```
 
-
+![](foto/3.png)
 
 ## 4. Membuat tabel jadwal mengajar :
 ```
@@ -71,8 +73,9 @@ CREATE jadwalmengajar (
 ```
 
 # Tampilkan tabel :
-`DESC jadwalmengajar;`
+```DESC jadwalmengajar;```
 
+![](foto/4.png)
 
 ## 5. Membuat tabel KRS mahasiswa :
 ```
@@ -91,6 +94,7 @@ CREATE TABLE KRSMahasiswa (
 ## Tampilkan tabel :
 `DESC krsmahasiswa;`
 
+![](foto/5.png)
 
 # Soal Latihan Praktikum
 
@@ -107,21 +111,128 @@ Berdasarkan table Mahasiswa pada praktikum sebelumnya: (nim, nama, jenis_kelamin
 - Tampilkan data nama dan alamat Mahasiswa saja dari tabel tersebut
 - Tampilkan data Mahasiswa terurut berdasarkan nama.
 
-## 1. Mengisi tabel dengan minimal 5 record data :
+## Mengisi tabel dengan minimal 5 record data :
 ```
-insert into Mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos, no_hp, kd_ds) values 
--> (11223344,"ari santoso","Laki-laki","1998-10-12","","Bekasi","","",""), 
--> (11223345,"ario talib","Laki-laki","1999-11-16","","Cikarang","","",""), 
--> (11223346,"dina marlina","Perempuan","1997-12-01","","Karawang","","",""), 
--> (11223347,"lisa ayu","perempuan","1996-01-02","","Bekasi","","",""), 
--> (11223348,"tiara wahidah","perempuan","1980-02-05","","Bekasi","","",""), 
--> (11223349,"anton sinaga","laki-laki","1988-03-10","","Cikarang","","","");
+INSERT INTO mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos, no_hp, kd_ds) VALUES
+(11223344,"ari santoso","Laki-laki","1998-10-12","","Bekasi","","",""), 
+(11223345,"ario talib","Laki-laki","1999-11-16","","Cikarang","","",""), 
+(11223346,"dina marlina","Perempuan","1997-12-01","","Karawang","","",""), 
+(11223347,"lisa ayu","perempuan","1996-01-02","","Bekasi","","",""), 
+(11223348,"tiara wahidah","perempuan","1980-02-05","","Bekasi","","",""), 
+(11223349,"anton sinaga","laki-laki","1988-03-10","","Cikarang","","","");
 ```
-## 2. Menampilkan semua isi/record pada tabel bisa menggunakan kode berikut :
+## Menampilkan semua isi/record pada tabel bisa menggunakan kode berikut :
 
-`SELECT * FROM mahasiswa;`
+```SELECT * FROM mahasiswa;```
 
+![](foto/6.png)
 
+## - Mengubah data tanggal lahir Mahasiswa yang bernama Ari menjadi : 1979-08-31 menggunakan kode berikut :
 
+```UPDATE mahasiswa SET tgl_lahir='1979-08-31' WHERE nama='Ari Santoso;```
 
+![](foto/7.png)
+
+## - Menampilkan satu baris / record data yang telah diubah tadi yaitu record dengan nama Ari saja dengan cara sebagai berikut :
+
+```SELECT * FROM mahasiswa WHERE nama='Ari Santoso;```
+
+![](foto/8.png)
+
+## - Menghapus Mahasiswa yang bernama Dina dengan cara sebagai berikut:
+
+```DELETE FROM mahasiswa WHERE nama='Dina Marlina';```
+
+![](foto/9.png)
+
+## - Menampilkan record atau data yang tanggal kelahirannya lebih dari atau sama dengan 1996-1-2 dengan cara sebagai berikut :
+
+```SELECT * FROM mahasiswa WHERE tgl_lahir<='1996-01-02';```
+
+![](foto/10.png)
+
+## - Menampilkan semua Mahasiswa yang berasal dari Bekasi dan berjenis kelamin perempuan dengan cara sebagai berikut :
+
+```
+SELECT * FROM mahasiswa WHERE kota='bekasi' AND jenis_kelamin='Perempuan';
+```
+
+![](foto/11.png)
+
+## -  Menampilkan semua Mahasiswa yang berasal dari Bekasi dengan kelamin laki-laki atau Mahasiswa yang berumur lebih dari 22 tahun dengan kelamin wanita dengan cara sebagai berikut :
+```
+SELECT * FROM mahasiswa WHERE kota='Bekasi' AND jenis_kelamin='Laki-laki' 
+OR tgl_lahir<='2002-4-22' AND jenis_kelamin='Perempuan';
+```
+![](foto/12.png)
+
+## - Menampilkan data nama dan jalan Mahasiswa saja dari tabel tersebut dengan cara sebagai berikut :
+
+```SELECT nama, jalan FROM mahasiswa;```
+
+![](foto/13.png)
+
+## - Menampilkan data Mahasiswa terurut berdasarkan nama dengan cara sebagai berikut :
+
+```SELECT * FROM mahasiswa ORDER BY nama ASC;```
+
+![](foto/14.png)
+
+# Evaluasi dan Pertanyaan
+
+# Tulis semua perintah-perintah SQL percobaan di atas beserta outputnya!
+
+## 1. Menambah data :
+`INSERT INTO <table> (field1, ..., fieldn) VALUE (value1, ..., valuen)`
+
+*Contoh :*
+
+```
+INSERT INTO biodata (nim, nama, alamat) VALUES ('11223344','Yoga','Bekasi'),
+('11223345', 'Muhammad', 'Jakarta');
+```
+![](foto/15.png)
+
+## 2. Menampilkan data :
+
+`SELECT * FROM <table> SELECT [field1, ..., fieldn] FROM <table>`
+
+*Contoh :*
+```SELECT * FROM biodata;```
+
+![](foto/16.png)
+
+## 3. Mengubah data :
+
+`UPDATE <table> SET field1=val1, ..., fieldn=valn WHERE <kondisi>;`
+
+*Contoh :*
+
+```UPDATE biodata SET nim=11223346 WHERE nama='Muhammad';```
+
+![](foto/17.png)
+
+## 4. Menghapus data :
+
+`DELETE FROM <table> WHERE <kondisi>`
+
+*Contoh :*
+
+```
+DELETE FROM biodata WHERE nama='Muhammad';
+```
+# Apa bedanya penggunaan BETWEEN dan penggunaan operator >= dan <= ?
+
+``
+- (Contoh BETWEEN: tgl_lahir BETWEEN '1972-10-10' AND '1992-10-11')
+
+- (Contoh >= dan <=: tgl_lahir >= '1980-11-11' AND tgl_lahir <= '1992-10-11')
+``
+Operator BETWEEN ini untuk menangani operasi “jangkauan” sedangkan operator >= dan <= termasuk pada operator relasional. Operator yang digunakan untuk perbandingan antara dua buah nilai. Jenis dari operator ini adalah: = , >, <, >=, <=, <>.
+
+# Kesimpulan
+
+Data Manipulation Language (DML) adalah bagian dari Structured Query Language (SQL) yang digunakan untuk mengatur dan memanipulasi data pada database. Dengan DML, Anda dapat melakukan berbagai operasi terhadap data. 
+
+Dalam DML, pengguna dapat menggunakan perintah SQL (Structured Query Language) untuk mengakses data. SQL adalah bahasa standar untuk mengakses dan mengelola data dalam database relasional. Perintah SQL yang digunakan dalam DML termasuk menambah, mengubah, menghapus, dan menampilkan data seperti yang telah dipraktekkan diatas.
 
