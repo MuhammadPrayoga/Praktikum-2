@@ -157,14 +157,14 @@ INSERT INTO mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos
 SELECT * FROM mahasiswa WHERE kota='bekasi' AND jenis_kelamin='Perempuan';
 ```
 
-![](foto/11.png)
+![](foto/12.png)
 
 ## -  Menampilkan semua Mahasiswa yang berasal dari Bekasi dengan kelamin laki-laki atau Mahasiswa yang berumur lebih dari 22 tahun dengan kelamin wanita dengan cara sebagai berikut :
 ```
 SELECT * FROM mahasiswa WHERE kota='Bekasi' AND jenis_kelamin='Laki-laki' 
 OR tgl_lahir<='2002-4-22' AND jenis_kelamin='Perempuan';
 ```
-![](foto/12.png)
+![](foto/11.png)
 
 ## - Menampilkan data nama dan jalan Mahasiswa saja dari tabel tersebut dengan cara sebagai berikut :
 
