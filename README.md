@@ -1,4 +1,4 @@
-## DATA MODELING MAP (DML)
+## DATA MODELING MAP
 ```
 mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos, no_hp, kd_ds)
 dosen (kd_ds, nama)
@@ -200,7 +200,7 @@ INSERT INTO biodata (nim, nama, alamat) VALUES ('11223344','Yoga','Bekasi'),
 *Contoh :*
 ```SELECT * FROM biodata;```
 
-![](foto/16.png)
+![](foto/18.png)
 
 ## 3. Mengubah data :
 
@@ -210,7 +210,7 @@ INSERT INTO biodata (nim, nama, alamat) VALUES ('11223344','Yoga','Bekasi'),
 
 ```UPDATE biodata SET nim=11223346 WHERE nama='Muhammad';```
 
-![](foto/17.png)
+![](foto/16.png)
 
 ## 4. Menghapus data :
 
@@ -221,18 +221,20 @@ INSERT INTO biodata (nim, nama, alamat) VALUES ('11223344','Yoga','Bekasi'),
 ```
 DELETE FROM biodata WHERE nama='Muhammad';
 ```
+![](foto/17.png)
+
 # Apa bedanya penggunaan BETWEEN dan penggunaan operator >= dan <= ?
 
-``
+```
 - (Contoh BETWEEN: tgl_lahir BETWEEN '1972-10-10' AND '1992-10-11')
 
 - (Contoh >= dan <=: tgl_lahir >= '1980-11-11' AND tgl_lahir <= '1992-10-11')
-``
+```
 Operator BETWEEN ini untuk menangani operasi “jangkauan” sedangkan operator >= dan <= termasuk pada operator relasional. Operator yang digunakan untuk perbandingan antara dua buah nilai. Jenis dari operator ini adalah: = , >, <, >=, <=, <>.
 
 # Kesimpulan
 
 Data Manipulation Language (DML) adalah bagian dari Structured Query Language (SQL) yang digunakan untuk mengatur dan memanipulasi data pada database. Dengan DML, Anda dapat melakukan berbagai operasi terhadap data. 
 
-Dalam DML, pengguna dapat menggunakan perintah SQL (Structured Query Language) untuk mengakses data. SQL adalah bahasa standar untuk mengakses dan mengelola data dalam database relasional. Perintah SQL yang digunakan dalam DML termasuk menambah, mengubah, menghapus, dan menampilkan data seperti yang telah dipraktekkan diatas.
+DDL (Data Definition Language) adalah bahasa yang digunakan untuk mendeskripsikan data dan hubungannya dalam suatu database. DDL digunakan untuk membuat dan memodifikasi struktur objek pada suatu database menggunakan perintah dan sintaks spesifik yang telah ditetapkan.
 
